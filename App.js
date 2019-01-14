@@ -1,9 +1,10 @@
 import React from "react";
 import Expo, { AppLoading } from "expo";
+import { observer } from "mobx-react";
 
 // Component
 import HomePage from "./Components/HomePage";
-
+import Stack from "./Navigation/Index";
 class App extends React.Component {
   constructor() {
     super();

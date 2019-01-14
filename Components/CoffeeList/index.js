@@ -16,7 +16,11 @@ class CoffeeList extends Component {
     let ListItems;
     if (coffeeshops) {
       ListItems = coffeeshops.map(coffeeShop => (
-        <CoffeeItem coffeeShop={coffeeShop} key={coffeeShop.id} />
+        <CoffeeItem
+          coffeeShop={coffeeShop}
+          navigation={this.props.navigation}
+          key={coffeeShop.id}
+        />
       ));
     }
     return (

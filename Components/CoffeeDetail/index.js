@@ -43,6 +43,8 @@ class CoffeeDetail extends Component {
   }
 
   render() {
+    let item = this.props.navigation.getParam("itemDetail");
+
     const coffeeshops = CoffeeStore.coffeeshops;
     if (!coffeeshops) return <Content />;
     const coffeeshop = coffeeshops[0];
@@ -52,13 +54,13 @@ class CoffeeDetail extends Component {
           <ListItem style={styles.top}>
             <Left>
               <Text style={styles.text}>
-                {coffeeshop.name + "\n"}
-                <Text note>{coffeeshop.location}</Text>
+                {item.name + "\n"}
+                <Text note>{item.location}</Text>
               </Text>
             </Left>
             <Body />
             <Right>
-              <Thumbnail bordered source={{ uri: coffeeshop.img }} />
+              <Thumbnail bordered source={{ uri: item.img }} />
             </Right>
           </ListItem>
           <ListItem style={{ borderBottomWidth: 0 }}>
