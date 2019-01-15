@@ -21,6 +21,8 @@ import styles from "./styles";
 //Store
 import CoffeeStore from "../../store/coffeeStore";
 
+import NewButton from "../ListHeaderButton";
+
 class CoffeeDetail extends Component {
   constructor(props) {
     super(props);
@@ -41,6 +43,13 @@ class CoffeeDetail extends Component {
       option: value
     });
   }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Coffee List",
+      headerLeft: null,
+      headerRight: <NewButton navigation={navigation} />
+    };
+  };
 
   render() {
     let item = this.props.navigation.getParam("itemDetail");
